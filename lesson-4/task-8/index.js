@@ -1,7 +1,7 @@
-const milions = 1e7;
+const millions = 1e7;
 let result = 0;
 
-for (let i = 0; i <= milions; i += 1) {
+for (let i = 0; i <= millions; i += 1) {
   result += i;
 }
 
