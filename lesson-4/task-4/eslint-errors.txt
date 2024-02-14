@@ -2,4 +2,4 @@ no-var
 eqeqeq
 no-undef
 no-plusplus
-no-return-assing
+no-return-assign
