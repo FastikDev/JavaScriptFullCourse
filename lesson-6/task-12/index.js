@@ -22,8 +22,8 @@ function sortDesc(array) {
 
   const sortedArray = sortAsc(array);
   const sort = [];
-  for (let i = sortedArray.length; i >= 0; i -= 1) {
-    if (sortedArray[i] !== sortedArray[i + 1]) sort.push(sortedArray[i]);
+  for (let i = sortedArray.length - 1; i >= 0; i -= 1) {
+    sort.push(sortedArray[i]);
   }
   return sort;
 }
