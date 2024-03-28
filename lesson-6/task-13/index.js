@@ -9,13 +9,9 @@
 //   Input: withdraw(['Ann', 'John', 'User'], [1400, 87, -6], 'User', 10)
 //   Output: -1 (и массив balances должен быть [1400, 87, -6])
 function withdraw(clients, balances, client, amount) {
-  let balance = 0;
+  const clientIndex = clients.indexOf(client);
+  if (clientIndex === -1) return -1;
 
-  for (let i = 0; i < clients.length; i += 1) {
-    if (clients[i] === client) {
-      if (amount > balances[i]) return -1;
-      balance = balances[i] - amount;
-    }
-  }
-  return balance;
+  if (amount > balances[clientIndex]) return -1;
+  return balances[clientIndex] - amount;
 }
