@@ -1,21 +1,13 @@
 'use strict';
 
 // put your code here
-const splitText = (text, num = 10) => {
-  if (!(typeof text === 'string')) {
+const sortContacts = (contacts, isAsc) => {
+  if (!Array.isArray(contacts)) {
     return null;
   }
-  const strArr = [];
-  let startPos = 0;
 
-  while (true) {
-    const chunk = text.substr(startPos, num);
-    if (chunk.length === 0) {
-      break;
-    }
-
-    strArr.push(chunk[0].toUpperCase() + chunk.slice(1));
-    startPos += num;
+  if (isAsc === false) {
+    return contacts.sort((a, b) => b.name.localeCompare(a.name));
   }
-  return strArr.join('\n');
+  return contacts.sort((a, b) => a.name.localeCompare(b.name));
 };
