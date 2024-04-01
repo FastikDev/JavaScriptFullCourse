@@ -1,10 +1,10 @@
 'use strict';
 
 // put your code here
-function reverseArray(arr) {
+export const reverseArray = arr => {
   if (!Array.isArray(arr)) {
     return null;
   }
 
   return arr.slice().reverse();
-}
+};
