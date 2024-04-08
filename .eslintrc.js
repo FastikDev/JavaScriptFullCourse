@@ -6,6 +6,7 @@ module.exports = {
     browser: true,
   },
   rules: {
+    'strict': ['error', 'global'],
     'no-alert': 0,
     'no-console': 0,
     'no-constant-condition': 0,
