@@ -6,7 +6,7 @@ module.exports = {
     browser: true,
   },
   rules: {
-    'strict': ['error', 'global'],
+    strict: 'off',
     'no-alert': 0,
     'no-console': 0,
     'no-constant-condition': 0,
@@ -23,8 +23,8 @@ module.exports = {
     'prettier/prettier': [
       'warn',
       {
-        'endOfLine': 'auto'
-      }
-    ]
+        endOfLine: 'auto',
+      },
+    ],
   },
 };
