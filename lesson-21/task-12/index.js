@@ -1,4 +1,4 @@
-const squaredNumbers = () => {
+export const squaredNumbers = () => {
   const numberElems = document.querySelectorAll('.number');
 
   numberElems.forEach(num => {
