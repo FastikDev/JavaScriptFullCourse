@@ -8,7 +8,7 @@ export const getItemsList = () => {
 
 export const getItemsArray = () => {
   const elementsArray = document.querySectorAll('.tool');
-  Array.from(elementsArray);
-  console.dir(elementsArray);
-  return elementsArray
+  const NodeList = Array.from(elementsArray);
+  console.dir(NodeList);
+  return NodeList;
 };
