@@ -4,5 +4,3 @@ export const getSection = num => {
 
   return parentElem.dataset.section;
 };
-
-getSection(3);
