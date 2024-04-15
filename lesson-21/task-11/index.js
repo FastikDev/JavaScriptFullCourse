@@ -1,17 +1,17 @@
 export const manageClasses = () => {
   const oneElem = document.querySelector('.one');
-  oneElem.classList.add('.selected');
+  oneElem.classList.add('selected');
 
   const twoElem = document.querySelector('.two');
-  twoElem.classList.remove('.selected');
+  twoElem.classList.remove('selected');
 
   const threeElem = document.querySelector('.three');
-  threeElem.classList.toggle('.three_done');
+  threeElem.classList.toggle('three_done');
 
   const fourElem = document.querySelector('.four');
-  const someClass = fourElem.classList.contains('.some-class');
+  const someClass = fourElem.classList.contains('some-class');
 
   if (someClass) {
-    fourElem.classList.add('.another-class');
+    fourElem.classList.add('another-class');
   }
 };
