@@ -12,7 +12,7 @@ export const getDescription = () => {
   return aboutElem.innerText;
 };
 
-export const gePlans = () => {
+export const getPlans = () => {
   const plansElem = document.querySelector('.plans');
 
   return plansElem.innerHTML;
