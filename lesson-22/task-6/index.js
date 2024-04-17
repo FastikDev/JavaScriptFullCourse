@@ -1,10 +1,11 @@
 'use strict';
 
-const btnElem = document.querySelector('.single-use-btn');
+const btnElems = document.querySelectorAll('.btn');
 
-btnElem.addEventListener('click', getClick);
+btnElems.forEach(btn => {
+  btn.addEventListener('click', handleClick);
+});
 
-function getClick() {
-  console.log('clicked');
-  btnElem.removeEventListener('click', getClick);
+function handleClick(event) {
+  console.log(event.target.textContent);
 }
