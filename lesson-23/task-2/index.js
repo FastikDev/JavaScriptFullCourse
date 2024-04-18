@@ -9,11 +9,11 @@ const generateNumbersRange = (from, to) => {
 };
 
 const getLineSeats = () => {
-  generateNumbersRange(1, 10)
+  return generateNumbersRange(1, 10)
     .map(
       seatNumber => `
     <div 
-        class="sector__line" 
+        class="sector__seat" 
         data-seat-number="${seatNumber}"
         ></div>
     `,
@@ -24,7 +24,7 @@ const getLineSeats = () => {
 const getSectorLines = () => {
   const seatString = getLineSeats();
 
-  generateNumbersRange(1, 10)
+  return generateNumbersRange(1, 10)
     .map(
       lineNumber => `
     <div 
