@@ -36,8 +36,9 @@ const getSectorLines = () => {
     .join('');
 };
 
+const arenaElem = document.querySelector('.arena');
+
 const renderArena = () => {
-  const arenaElem = document.querySelector('.arena');
   const lineString = getSectorLines();
 
   const sectorsString = generateNumbersRange(1, 3)
@@ -53,5 +54,21 @@ const renderArena = () => {
 
   arenaElem.innerHTML = sectorsString;
 };
+
+const onSeatSelect = event => {
+  if (!event.target.matches('.sector__seat')) {
+    return;
+  }
+
+  const seatNumbers = event.target.dataset.seatNumber;
+  const lineNumbers = event.target.closest('.sector__line').dataset.lineNumber;
+  const sectorNumbers = event.target.closest('.sector').dataset.sectorNumber;
+
+  const selectedSeatElem = document.querySelector('.board__selected-seat');
+
+  selectedSeatElem.innerText = `S ${sectorNumbers}  L - ${lineNumbers} -  S ${seatNumbers}`;
+};
+
+arenaElem.addEventListener('click', onSeatSelect);
 
 renderArena();
