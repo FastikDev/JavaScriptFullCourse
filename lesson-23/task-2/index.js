@@ -22,15 +22,13 @@ const getLineSeats = () => {
 };
 
 const getSectorLines = () => {
-  const seatString = getLineSeats();
-
   return generateNumbersRange(1, 10)
     .map(
       lineNumber => `
     <div 
         class="sector__line" 
         data-line-number="${lineNumber}"
-        >${seatString}</div>
+        >${getLineSeats()}</div>
     `,
     )
     .join('');
@@ -39,20 +37,16 @@ const getSectorLines = () => {
 const arenaElem = document.querySelector('.arena');
 
 const renderArena = () => {
-  const lineString = getSectorLines();
-
-  const sectorsString = generateNumbersRange(1, 3)
+  arenaElem.innerHTML = generateNumbersRange(1, 3)
     .map(
       sectorNumber => `
     <div 
         class="sector" 
         data-sector-number="${sectorNumber}"
-        >${lineString}</div>
+        >${getSectorLines()}</div>
     `,
     )
     .join('');
-
-  arenaElem.innerHTML = sectorsString;
 };
 
 const onSeatSelect = event => {
@@ -60,13 +54,13 @@ const onSeatSelect = event => {
     return;
   }
 
-  const seatNumbers = event.target.dataset.seatNumber;
-  const lineNumbers = event.target.closest('.sector__line').dataset.lineNumber;
-  const sectorNumbers = event.target.closest('.sector').dataset.sectorNumber;
+  const seatNumber = event.target.dataset.seatNumber;
+  const lineNumber = event.target.closest('.sector__line').dataset.lineNumber;
+  const sectorNumber = event.target.closest('.sector').dataset.sectorNumber;
 
   const selectedSeatElem = document.querySelector('.board__selected-seat');
 
-  selectedSeatElem.textContent = `S ${seatNumbers} L - ${lineNumbers} - S ${sectorNumbers}`;
+  selectedSeatElem.textContent = `S ${sectorNumber} L - ${lineNumber} - S ${seatNumber}`;
 };
 
 arenaElem.addEventListener('click', onSeatSelect);
