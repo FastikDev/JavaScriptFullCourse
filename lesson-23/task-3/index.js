@@ -1,6 +1,6 @@
 'use strict';
 
-const tasks = [
+export const tasks = [
   { id: 'task1', text: 'Buy milk', done: false },
   { id: 'task2', text: 'Pick up Tom from airport', done: false },
   { id: 'task3', text: 'Visit party', done: false },
