@@ -8,7 +8,7 @@ export const tasks = [
   { id: 'task5', text: 'Buy meat', done: true },
 ];
 
-const renderTasks = tasksList => {
+export const renderTasks = tasksList => {
   const listElem = document.querySelector('.list');
   listElem.innerHTML = '';
 
@@ -36,7 +36,7 @@ const renderTasks = tasksList => {
     });
 };
 
-const toggleTaskStatus = taskId => {
+export const toggleTaskStatus = taskId => {
   const taskIndex = tasks.findIndex(task => task.id === taskId);
   if (taskIndex !== -1) {
     tasks[taskIndex].done = !tasks[taskIndex].done;
@@ -44,7 +44,7 @@ const toggleTaskStatus = taskId => {
   }
 };
 
-const createTask = text => {
+export const createTask = text => {
   if (text.trim() === '') {
     return; // Don't add empty tasks
   }
