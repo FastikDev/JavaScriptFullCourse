@@ -10,7 +10,7 @@ const tasks = [
 
 const renderTasks = tasksList => {
   const listElem = document.querySelector('.list');
-  listElem.innerHTML = ''; // Clear the list before rendering
+  listElem.innerHTML = '';
 
   tasksList
     .sort((a, b) => a.done - b.done)
@@ -25,7 +25,7 @@ const renderTasks = tasksList => {
       checkboxElem.setAttribute('type', 'checkbox');
       checkboxElem.checked = done;
       checkboxElem.classList.add('list__item-checkbox');
-      checkboxElem.dataset.id = id; // Set unique id as dataset attribute
+      checkboxElem.dataset.id = id;
       listItemElem.appendChild(checkboxElem);
       
       const textElem = document.createElement('span');
@@ -60,7 +60,7 @@ const createTask = text => {
 document.querySelector('.create-task-btn').addEventListener('click', () => {
   const taskInput = document.querySelector('.task-input');
   createTask(taskInput.value);
-  taskInput.value = ''; // Clear input field after creating task
+  taskInput.value = '';
 });
 
 document.querySelector('.list').addEventListener('click', event => {
