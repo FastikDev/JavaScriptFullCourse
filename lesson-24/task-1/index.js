@@ -5,5 +5,5 @@ export const dayOfWeek = (date, days) => {
 
   const dateInFuture = new Date(date).setDate(day + days);
 
-  return weekDays[new Date(dataInFuture).getDay()];
+  return weekDays[new Date(dateInFuture).getDay()];
 };
