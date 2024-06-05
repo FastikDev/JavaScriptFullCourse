@@ -1,6 +1,6 @@
 'use strict';
 
-export const tasks = [
+const tasks = [
   { id: 'task1', text: 'Buy milk', done: false },
   { id: 'task2', text: 'Pick up Tom from airport', done: false },
   { id: 'task3', text: 'Visit party', done: false },
@@ -8,7 +8,7 @@ export const tasks = [
   { id: 'task5', text: 'Buy meat', done: true },
 ];
 
-export const renderTasks = tasksList => {
+const renderTasks = tasksList => {
   const listElem = document.querySelector('.list');
   listElem.innerHTML = '';
 
@@ -20,14 +20,14 @@ export const renderTasks = tasksList => {
       if (done) {
         listItemElem.classList.add('list__item_done');
       }
-      
+
       const checkboxElem = document.createElement('input');
       checkboxElem.setAttribute('type', 'checkbox');
       checkboxElem.checked = done;
       checkboxElem.classList.add('list__item-checkbox');
       checkboxElem.dataset.id = id;
       listItemElem.appendChild(checkboxElem);
-      
+
       const textElem = document.createElement('span');
       textElem.textContent = text;
       listItemElem.appendChild(textElem);
@@ -36,7 +36,7 @@ export const renderTasks = tasksList => {
     });
 };
 
-export const toggleTaskStatus = taskId => {
+const toggleTaskStatus = taskId => {
   const taskIndex = tasks.findIndex(task => task.id === taskId);
   if (taskIndex !== -1) {
     tasks[taskIndex].done = !tasks[taskIndex].done;
@@ -44,7 +44,7 @@ export const toggleTaskStatus = taskId => {
   }
 };
 
-export const createTask = text => {
+const createTask = text => {
   if (text.trim() === '') {
     return; // Don't add empty tasks
   }
