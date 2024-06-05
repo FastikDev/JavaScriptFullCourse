@@ -3,7 +3,7 @@ localStorage.setItem('hobbies', JSON.stringify({ name: 'Viktor' }));
 localStorage.setItem('name', 'Alina');
 localStorage.setItem('age', JSON.stringify(17));
 
-export const getLocalStorageDate = () => {
+export const getLocalStorageData = () => {
   return Object.entries(localStorage).reduce((acc, [key, value]) => {
     let newVavue;
     try {
@@ -17,5 +17,3 @@ export const getLocalStorageDate = () => {
     };
   }, {});
 };
-
-console.log(getLocalStorageDate());
