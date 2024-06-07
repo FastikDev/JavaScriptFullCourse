@@ -1,4 +1,4 @@
-const shmoment = date => {
+export const shmoment = date => {
     let newDate = new Date(date);
 
     return {
