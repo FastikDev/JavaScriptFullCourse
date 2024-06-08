@@ -4,6 +4,7 @@ export const addImage = (imgSrc, callback) => {
   imgElem.src = imgSrc;
 
   const pageElem = document.querySelector('.page');
+
   pageElem.append(imgElem);
 
   const onImageLoaded = () => {
@@ -11,8 +12,12 @@ export const addImage = (imgSrc, callback) => {
     callback(null, { width, height });
   };
 
+  const onImageError = () => {
+    callback('Image loading failed');
+  };
+
   imgElem.addEventListener('load', onImageLoaded);
-  imgElem.addEventListener('error', () => callback('Image loaded is failed'));
+  imgElem.addEventListener('error', onImageError);
 };
 
 const onImageLoaded = (error, imgSize) => {
@@ -23,9 +28,6 @@ const onImageLoaded = (error, imgSize) => {
 
   const { width, height } = imgSize;
   const sizeElem = document.querySelector('.image-size');
+
   sizeElem.textContent = `${width} x ${height}`;
 };
-
-document.addEventListener('DOMContentLoaded', () => {
-  addImage('https://server.com/image.png', onImageLoaded);
-});
