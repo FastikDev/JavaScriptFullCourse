@@ -25,3 +25,7 @@ const onImageLoaded = (error, imgSize) => {
   const sizeElem = document.querySelector('.image-size');
   sizeElem.textContent = `${width} x ${height}`;
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+  addImage('https://server.com/image.png', onImageLoaded);
+});
