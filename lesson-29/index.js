@@ -2,9 +2,7 @@ export const addImage = (imgSrc, callback) => {
   const imgElem = document.createElement('img');
   imgElem.setAttribute('alt', 'My Photo');
   imgElem.src = imgSrc;
-
   const pageElem = document.querySelector('.page');
-
   pageElem.append(imgElem);
 
   const onImageLoaded = () => {
@@ -12,13 +10,11 @@ export const addImage = (imgSrc, callback) => {
     callback(null, { width, height });
   };
 
-  const onImageError = () => {
-    callback('Image loading failed');
-  };
-
   imgElem.addEventListener('load', onImageLoaded);
-  imgElem.addEventListener('error', onImageError);
+  imgElem.addEventListener('error', () => callback('Image loaded is failed'));
 };
+
+const imgSrc = 'https://server.com/image.png';
 
 const onImageLoaded = (error, imgSize) => {
   if (error) {
@@ -31,7 +27,3 @@ const onImageLoaded = (error, imgSize) => {
 
   sizeElem.textContent = `${width} x ${height}`;
 };
-
-document.addEventListener('DOMContentLoaded', () => {
-  addImage('https://server.com/image.png', onImageLoaded);
-});
