@@ -10,8 +10,9 @@ export const addImage = (imgSrc, callback) => {
     callback(null, { width, height });
   };
 
-  imgElem.addEventListener('load', onImageLoaded);
+  
   imgElem.addEventListener('error', () => callback('Image loaded is failed'));
+  imgElem.addEventListener('load', onImageLoaded);
 };
 
 const imgSrc = 'https://server.com/image.png';
