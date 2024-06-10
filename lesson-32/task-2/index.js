@@ -19,18 +19,20 @@ const servers = [
     'https://server.com/us',
     'https://server.com/eu',
     'https://server.com/au',
-    
-]
+];
 
 export const getUserASAP = userId => {
     const usersUrls = servers
         .map(serverUrl => `${serverUrl}/users/${userId}`);
 
-    const requests = usersUrls 
-        .map(userUrl => request(userUrl))
+    const requests = usersUrls
+        .map(userUrl => request(userUrl));
 
     return Promise.race(requests);
 };
+
+// Пример вызова функции:
+getUserASAP('user-id-1').then(res => console.log(res));
 
 
 
