@@ -29,7 +29,7 @@ export const getUserASAP = userId => {
     const requests = usersUrls 
         .map(userUrl => request(userUrl))
 
-    return Promise.race(requests)
+    return Promise.race(requests);
 };
 
 
