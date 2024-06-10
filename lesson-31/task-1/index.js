@@ -4,7 +4,7 @@
  * @param {string} userId
  * @return {promise}
  */
-export const requestUserData = userId => {
+const requestUserData = userId => {
     const request = new Promise((resolve, reject) => {
         if (userId === 'broken') {
             setTimeout(() => {
