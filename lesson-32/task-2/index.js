@@ -32,8 +32,6 @@ export const getUserASAP = userId => {
     return Promise.race(requests)
 };
 
-getuserASAP('user-id-1').then(res => console.log(res));
-
 
 
  
