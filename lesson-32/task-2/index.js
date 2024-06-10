@@ -22,7 +22,7 @@ const servers = [
     
 ]
 
-export const getuserASAP = userId => {
+export const getUserASAP = userId => {
     const usersUrls = servers
         .map(serverUrl => `${serverUrl}/users/${userId}`);
 
