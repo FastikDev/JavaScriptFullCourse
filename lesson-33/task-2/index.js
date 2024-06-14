@@ -14,6 +14,5 @@ export function getTasksList() {
 
 export function getTaskById(taskId) {
   // put your code here
-  return getTasksList()
-    .then(tasksList => tasksList.find(task => task.id === taskId));
+  return fetch(`${baseUrl}/${taskId}`);
 }
