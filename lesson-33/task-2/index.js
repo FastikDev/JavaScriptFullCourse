@@ -9,11 +9,10 @@ const baseUrl = 'https://5e5cf5eb97d2ea0014796f01.mockapi.io/api/v1/tasks';
 export function getTasksList() {
   // put your code here
   return fetch(baseUrl)
-    .then(responce => responce.json());
+    .then(response => response.json());
 }
 
 export function getTaskById(taskId) {
   // put your code here
-  return getTasksList()
-    .then(tasksList => tasksList.find(task => task.id === taskId.toString()));
+  return fetch(`${baseUrl}/${taskId}`);
 }
