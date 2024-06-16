@@ -1,3 +1,16 @@
+//algo
+
+//1. identify form, inputs and submit button
+//2. check input validation
+//3. leave focus on input before validation
+//4. post form data on server
+//4.1 tramsformation form data on use object
+//4.2 post request on server
+//4.3 get server response on alert
+//4.4 add catch promisse
+//4.5 clear form before submit
+//5. update button attibute disable before submit
+
 document.addEventListener('DOMContentLoaded', () => {
   const formElem = document.querySelector('.login-form');
   const submitButton = formElem.querySelector('.submit-button');
