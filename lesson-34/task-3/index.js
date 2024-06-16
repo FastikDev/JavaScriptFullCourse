@@ -10,6 +10,8 @@
 //4.4 add catch promisse
 //4.5 clear form before submit
 //5. update button attibute disable before submit
+const baseUrl = 'https://666e7390f1e1da2be5204c0e.mockapi.io/api/v1/register';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const formElem = document.querySelector('.login-form');
