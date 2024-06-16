@@ -32,13 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const formData = new FormData(formElem);
     const formObject = Object.fromEntries(formData.entries());
+    const formJSON = JSON.stringify(formObject);
 
     fetch(baseUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(formObject)
+      body: formJSON
     })
     .then(response => response.json())
     .then(data => {
