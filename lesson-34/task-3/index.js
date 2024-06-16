@@ -18,16 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const baseUrl = 'https://666e7390f1e1da2be5204c0e.mockapi.io/api/v1/register';
 
-  export const checkFormValidity = () => {
+  const checkFormValidity = () => {
     const isValid = [...inputs].every(input => input.checkValidity());
     submitButton.disabled = !isValid;
   };
 
-  export const handleInput = () => {
+  const handleInput = () => {
     checkFormValidity();
   };
 
-  export const handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
     const formData = new FormData(formElem);
