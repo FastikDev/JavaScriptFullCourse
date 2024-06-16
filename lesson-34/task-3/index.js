@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const checkFormValidity = () => {
     const isValid = [...inputs].every(input => input.checkValidity());
-    submitButton.disabled = !isValid;
+    submitButton.setAttribute('disabled', !isValid);
   };
 
   const handleInput = () => {
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const formObject = Object.fromEntries(formData.entries());
     const formJSON = JSON.stringify(formObject);
 
-    return fetch(baseUrl, {
+    fetch(baseUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
