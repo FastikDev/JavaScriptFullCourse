@@ -16,17 +16,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitButton = formElem.querySelector('.submit-button');
   const inputs = formElem.querySelectorAll('input');
 
-  export const checkFormValidity = () => {
+  const checkFormValidity = () => {
     const isValid = [...inputs].every(input => input.checkValidity());
     submitButton.disabled = !isValid;
   };
 
-  export const handleInput = (event) => {
+  const handleInput = (event) => {
     checkFormValidity();
     event.target.focus();
   };
 
-  export const handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault(); 
 
     const formData = new FormData(formElem);
