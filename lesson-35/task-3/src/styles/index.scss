@@ -1,0 +1,13 @@
+@import 'spinner.scss';
+@import 'user.scss';
+@import 'list.scss';
+@import 'common.scss';
+
+.page {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
