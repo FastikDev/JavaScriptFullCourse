@@ -1,0 +1,26 @@
+.user {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+
+  &__avatar {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+  }
+
+  &__info {
+    text-align: center;
+    font-size: 24px;
+    margin: 32px;
+  }
+
+  &__name {
+    font-weight: 700;
+  }
+
+  &__location {
+    opacity: 0.5;
+  }
+}
