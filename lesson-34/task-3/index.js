@@ -37,7 +37,7 @@ formElem.addEventListener('submit', async event => {
     }
 
     const result = await response.json();
-    alert(JSON.stringify(result, null, 2));
+    alert(JSON.stringify(data));
     formElem.reset();
   } catch (error) {
     alert(`Ошибка: ${error.message}`);
