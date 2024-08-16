@@ -37,8 +37,9 @@ formElem.addEventListener('submit', async event => {
     }
 
     const result = await response.json();
-    console.log('Данные успешно отправлены:', result);
+    alert(JSON.stringify(result, null, 2));
+    formElem.reset();
   } catch (error) {
-    console.error('Ошибка:', error);
+    alert('Ошибка:', error);
   }
 });
