@@ -20,7 +20,7 @@ inputs.forEach(input => input.addEventListener('input', checkFormValidity));
 formElem.addEventListener('submit', async event => {
   event.preventDefault();
 
-  const data = Object.fromEntries((new FormData(formElem)).entries());
+  const formData = Object.fromEntries(new FormData(formElem));
 
   try {
     const response = await fetch(baseUrl, {
@@ -28,7 +28,7 @@ formElem.addEventListener('submit', async event => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(formData),
     });
 
     if (!response.ok) {
@@ -36,8 +36,8 @@ formElem.addEventListener('submit', async event => {
     }
 
     const result = await response.json();
-    alert(JSON.stringify(data));
     formElem.reset();
+    alert(JSON.stringify(result));
   } catch (error) {
     alert(`Ошибка: ${error.message}`);
   }
