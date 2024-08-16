@@ -20,7 +20,7 @@ inputs.forEach(input => input.addEventListener('input', checkFormValidity));
 formElem.addEventListener('submit', async event => {
   event.preventDefault();
 
-  const data = Object.fromEntries(new FormData(formElem).entries());
+  const data = Object.fromEntries((new FormData(formElem)).entries());
 
   try {
     const response = await fetch(baseUrl, {
